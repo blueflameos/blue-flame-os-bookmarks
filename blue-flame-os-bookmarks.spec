@@ -1,5 +1,5 @@
 Name:           blue-flame-os-bookmarks
-Version:        29
+Version:        30
 Release:        1%{?dist}
 Summary:        Blue Flame OS bookmarks
 Group:          Applications/Internet
@@ -7,7 +7,7 @@ License:        GFDL
 URL:            https://github.com/blueflameos/blue-flame-os-bookmarks
 # I had to strip the embedded icons out of the bookmarks file, because they are not 
 # distributable under the GFDL. See https://bugzilla.redhat.com/show_bug.cgi?id=433471
-Source0:        default-bookmarks.html
+Source0:        https://raw.githubusercontent.com/blueflameos/blue-flame-os-bookmarks/master/default-bookmarks.html
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 Provides:       system-bookmarks
@@ -38,6 +38,9 @@ install -p -m 644 %{SOURCE0} $RPM_BUILD_ROOT%{_datadir}/bookmarks
 %{_datadir}/bookmarks/default-bookmarks.html
 
 %changelog
+* Sun Feb 03 2019 yucuf Sourani <youssef.m.sourani@gmail.com> - 30-1
+- Version 30
+
 * Fri Nov 16 2018 yucuf Sourani <youssef.m.sourani@gmail.com> - 29-1
 - Initial For BlueFlameOS 29
 
